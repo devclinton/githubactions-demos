@@ -1,0 +1,48 @@
+name: Python license check action
+
+on:
+  push:
+    paths:
+        - "*.csv"
+
+env:
+  DEP_PATH: python/requirements.txt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+    
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+        with:
+          path: ".github./scripts/requirements.txt"
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v37
+        
+        # To compare changes between the current commit and the last pushed remote commit set `since_last_remote_commit: true`. e.g
+        # with:
+        #   since_last_remote_commit: true 
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            python .github/scripts/panda-profiler.py -file $file
+          done
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      
+      
+      
