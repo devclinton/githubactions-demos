@@ -1,3 +1,5 @@
+This is examples using the Plantuml diagram generator.
+
 # Examples
 
 Set `plantuml:{filename}` as a fence information. `filename` is used as the file name of generated diagrams. In the following case, `md-sample-sequence.svg` is created.
