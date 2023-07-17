@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Get Mermaid diagram for the action repository this workflow runs in
       # Use `nwo` option to change the action repository
       - name: Get Mermaid diagram
         id: mermaid
-        uses: imjohnbo/action-to-mermaid@1.1.0
+        uses: imjohnbo/action-to-mermaid@v1.1.0
 
       # Do something with Mermaid diagram, e.g. update README, output to separate file, etc.
       - name: Echo Mermaid diagram
