@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  mermaid:
+  mermaid-from-ga:
     runs-on: ubuntu-latest
 
     steps:
