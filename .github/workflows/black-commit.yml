@@ -1,0 +1,13 @@
+# Simple linting github action
+name: Format and Checkin using Black
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: psf/black@stable
+        
+        
