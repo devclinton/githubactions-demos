@@ -2,7 +2,6 @@ name: markdown-auto-catalog
 
 on:
   push:
-    branches: [ "master" ]
     paths:
       - '**.md'
       - '.github/workflows/text-catalog.yml'
