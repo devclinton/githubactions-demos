@@ -1,7 +1,13 @@
-on: push
+name: Generate Markdown Table of Contents
+
+on:
+  push:
+    paths:
+      - '**.md'
+
 permissions:
   contents: write
-name: TOC Generator
+
 jobs:
   generateTOC:
     name: TOC Generator
