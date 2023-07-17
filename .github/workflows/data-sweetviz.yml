@@ -1,14 +1,14 @@
-name: Panda Data Profiler
+name: Sweetviz
 on:
   push:
     paths:
         - "**.csv"
 
 env:
-  DEP_PATH: .github/scripts/requirements.txt
+  DEP_PATH: python/sweetviz.txt
 
 jobs:
-  pandas-profile:
+  sweetviz:
     runs-on: ubuntu-latest
     steps:
       - name: Check out master
@@ -21,7 +21,7 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v4
         with:
-          path: ".github/scripts/requirements.txt"
+          path: ".github/scripts/sweetviz.txt"
 
       - name: Get changed files
         id: changed-files
@@ -36,7 +36,7 @@ jobs:
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            python .github/scripts/panda-profiler.py -file $file
+            python .github/scripts/sweetviz.py -file $file
           done
 
       - name: Commit & Push changes
