@@ -1,5 +1,4 @@
-name: Python license check action
-
+name: Panda Data Profiler
 on:
   push:
     paths:
