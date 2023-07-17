@@ -13,4 +13,4 @@ if __name__ == "__main__":
     df = pd.read_csv(args.file, header=args.header, index_col=[0])
     report = sv.analyze(df, "Label")
     # save file in html format
-    report.show_html(f'{args.file}.html')
+    report.show_html(f"{args.file}.html")
