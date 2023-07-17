@@ -4,6 +4,9 @@ on:
     paths:
         - "**.csv"
 
+permissions:
+  contents: write
+
 env:
   DEP_PATH: .github/scripts/requirements.txt
 

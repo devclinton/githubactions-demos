@@ -6,6 +6,7 @@ on:
       - '**/*.mermaid'
       - '**/*.mmd'
       - '**/*.md'
+
 permissions:
   contents: write
 
@@ -41,13 +42,7 @@ jobs:
         run: |
           git status
 
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Add changes" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Commit & Push changes
+        uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
