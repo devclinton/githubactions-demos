@@ -1,5 +1,10 @@
 name: generate plantuml
 on: push
+# Allow writing to repo
+permissions:
+  contents: write
+  
+# Define our jobs
 jobs:
   generate_plantuml:
     runs-on: ubuntu-latest
