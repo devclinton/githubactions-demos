@@ -1,5 +1,6 @@
 import pandas as pd
 import argparse
+import sweetviz as sv
 
 
 if __name__ == "__main__":

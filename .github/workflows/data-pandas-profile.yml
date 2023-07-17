@@ -36,7 +36,7 @@ jobs:
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            python .github/scripts/panda-profiler.py -file $file
+            python .github/scripts/panda-profiler.py --file $file
           done
 
       - name: Commit & Push changes
