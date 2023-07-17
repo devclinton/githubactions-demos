@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  generate-mermaid:
     runs-on: ubuntu-latest
 
     steps:

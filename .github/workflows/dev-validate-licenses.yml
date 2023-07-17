@@ -9,7 +9,7 @@ env:
   DEP_PATH: python/requirements.txt
 
 jobs:
-  build:
+  validate-license:
     runs-on: ubuntu-latest
     steps:
       - name: Check out master
