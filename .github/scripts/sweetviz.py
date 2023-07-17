@@ -1,6 +1,7 @@
 import pandas as pd
 import argparse
-import sweetviz as sv
+
+
 
 
 if __name__ == "__main__":
@@ -11,6 +12,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     df = pd.read_csv(args.file, header=args.header, index_col=[0])
+
+    import sweetviz as sv
     report = sv.analyze(df, "Label")
     # save file in html format
     report.show_html(f"{args.file}.sweetviz.html")
