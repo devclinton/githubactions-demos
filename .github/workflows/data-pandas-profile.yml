@@ -2,7 +2,7 @@ name: Panda Data Profiler
 on:
   push:
     paths:
-        - "*.csv"
+        - "**.csv"
 
 env:
   DEP_PATH: python/requirements.txt
