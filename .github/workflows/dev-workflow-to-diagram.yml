@@ -20,7 +20,7 @@ jobs:
       # Use `nwo` option to change the action repository
       - name: Get Mermaid diagram
         id: mermaid
-        uses: imjohnbo/action-to-mermaid@v1.1.0
+        uses: imjohnbo/action-to-mermaid@1.1.0
 
       # Do something with Mermaid diagram, e.g. update README, output to separate file, etc.
       - name: Echo Mermaid diagram
