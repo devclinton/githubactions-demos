@@ -1,0 +1,1 @@
+[Example of a bad link ignore through config](http://notarealwebsitedotcom.com.net)

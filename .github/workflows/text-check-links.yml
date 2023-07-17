@@ -1,0 +1,18 @@
+name: Link-check
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run linksafe
+        uses: TechWiz-3/linksafe@main
+        with: # comma seperated lists
+          # use relative paths, if no dirs specified root dir is scanned
+          dirs: "."
+          # set to false by default
+          verbose: true
+          whitelist_links: "https://xyz.xyz"
+          # use relative paths
+          whitelist_files: "./text/check-links/README.md"
