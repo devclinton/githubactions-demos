@@ -1,7 +1,10 @@
 # Simple linting github action
 name: Format and Checkin using Black
 
-on: [push]
+on:   
+  push:
+    paths:
+      - '**.py'
 permissions:
   contents: write
 
