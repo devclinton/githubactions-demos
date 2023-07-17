@@ -18,7 +18,6 @@ jobs:
         with:
           content-path: '.'
           document-path: 'README.md'
-          filter: '\(.*\).md'
         continue-on-error: true
       - name: Commit & Push changes
         uses: actions-js/push@master
