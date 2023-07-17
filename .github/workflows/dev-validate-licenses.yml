@@ -20,4 +20,4 @@ jobs:
         with:
           strategy-ini-file: ./python/license-conf.ini
           level: standard
-          requirements-txt-file: /requirements.txt
+          requirements-txt-file: ./python/requirements.txt
