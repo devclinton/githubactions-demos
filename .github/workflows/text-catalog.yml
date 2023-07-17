@@ -17,5 +17,9 @@ jobs:
         with:
           content-path: '.'
           document-path: 'README.md'
-          filter: '\(.*\).md'
+          filter: '\(.**\).md'
         continue-on-error: true
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
