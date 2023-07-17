@@ -1,0 +1,23 @@
+name: Python license check action
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DEP_PATH: python/requirements.txt
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@master
+
+      - name: License Checker
+        uses: andersy005/gh-action-py-liccheck@main
+        with:
+          strategy-ini-file: ./python/license-conf.ini
+          level: standard
+          requirements-txt-file: /requirements.txt
