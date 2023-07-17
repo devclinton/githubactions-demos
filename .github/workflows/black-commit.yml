@@ -2,12 +2,21 @@
 name: Format and Checkin using Black
 
 on: [push]
+permissions:
+  contents: write
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: psf/black@stable
+      - name: Run black and format the code
+        uses: psf/black@stable
+        with:
+          options: "--verbose"
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         
         
